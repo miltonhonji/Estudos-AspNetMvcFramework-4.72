@@ -38,6 +38,12 @@ namespace Projeto01.Controllers
             }
         };
 
+        // GET: Create
+        public ActionResult Create()
+        {
+            return View();
+        }
+
         // GET: Categorias
         public ActionResult Index()
         {
