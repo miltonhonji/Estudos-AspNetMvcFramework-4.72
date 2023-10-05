@@ -53,6 +53,12 @@ namespace Projeto01.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult Edit(long id)
+        {
+            return View(categorias.Where(
+                m => m.CategoriaId == id).First());
+        }
+
         // GET: Categorias
         public ActionResult Index()
         {
