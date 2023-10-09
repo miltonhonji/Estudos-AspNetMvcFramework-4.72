@@ -59,6 +59,15 @@ namespace Projeto01.Controllers
                 m => m.CategoriaId == id).First());
         }
 
+        public ActionResult Edit(Categoria categoria)
+        {
+            categorias.Remove(categorias.Where(
+                c => c.CategoriaId == categoria.CategoriaId)
+                .First());
+            categorias.Add(categoria);
+            return RedirectToAction("Index");
+        }
+
         // GET: Categorias
         public ActionResult Index()
         {
