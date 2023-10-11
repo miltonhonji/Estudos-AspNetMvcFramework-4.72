@@ -53,12 +53,26 @@ namespace Projeto01.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult Delete(long id)
+        {
+            return View(categorias.Where(
+                m => m.CategoriaId == id).First());
+        }
+
+        public ActionResult Details(long id)
+        {
+            return View(categorias.Where(
+                m => m.CategoriaId == id).First());
+        }
+
         public ActionResult Edit(long id)
         {
             return View(categorias.Where(
                 m => m.CategoriaId == id).First());
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Edit(Categoria categoria)
         {
             categorias.Remove(categorias.Where(
